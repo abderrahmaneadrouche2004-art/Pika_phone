@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Pika Phone - Check</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>Pika Phone</h1>
+  <select class="lang" onchange="setLang(this.value)">
+    <option value="ar">العربية</option>
+    <option value="fr">Français</option>
+    <option value="en">English</option>
+  </select>
+</header>
+
+<div class="container">
+
+  <div id="msg" class="message-box">
+    <p id="q1" class="quran"></p>
+    <button class="big-btn" onclick="hideMsg()">OK</button>
+  </div>
+
+  <h2 id="t4"></h2>
+  <input type="text" id="t5">
+  <button class="big-btn" id="b3"></button>
+
+</div>
+
+<script src="lang.js"></script>
+<script>
+loadLang();
+function hideMsg(){ document.getElementById("msg").style.display="none"; }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Pika Phone</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!-- ===== طبقة إخلاء المسؤولية ===== -->
+<div id="termsOverlay" class="terms-overlay">
+  
+  <div class="terms-box">
+    <p>
+      ⚠️ إخلاء مسؤولية: هذا الموقع يقدم خدمة معلوماتية فقط،
+      ولا يتحمل أي مسؤولية قانونية عن القرارات التي يتخذها المستخدم.
+      التحقق لا يغني عن الإجراءات الرسمية لدى الجهات المختصة.
+      <br><br>
+      معًا لمحاربة سرقة الهواتف 📵
+    </p>
+    
+    <button onclick="acceptTerms()">
+      أوافق على الشروط
+    </button>
+  </div>
+  
+</div>
+<!-- ===== الشريط العلوي ===== -->
+<header class="top-header">
+
+  <!-- زر اللغة (يسار الشريط) -->
+  <select class="lang big-lang" onchange="setLang(this.value)">
+    <option value="ar">العربية</option>
+    <option value="fr">Français</option>
+    <option value="en">English</option>
+  </select>
+
+  <!-- اسم الموقع -->
+  <h1>Pika Phone</h1>
+
+  <!-- شريط الشعارات المتحرك -->
+  <div class="brand-wrapper">
+    <div class="brand-bar">
+      <div class="brand-track">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/IPhone_logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Xiaomi_logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Huawei_logo.svg">
+      </div>
+      <div class="brand-track">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/IPhone_logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Xiaomi_logo.svg">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Huawei_logo.svg">
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== صندوق الترحيب ===== -->
+<div class="glass-box">
+  <h2 id="t1"></h2>
+  <p id="t2"></p>
+
+  <div class="home-buttons">
+    <button id="b1" onclick="location.href='report.html'"></button>
+    <button id="b2" onclick="location.href='check.html'"></button>
+  </div>
+</div>
+
+<!-- ===== صندوق إخلاء المسؤولية (إجباري) ===== -->
+<div id="disclaimerBox" class="disclaimer-box">
+  <p id="disclaimerText"></p>
+
+  <button class="big-btn" onclick="acceptTerms()">
+    أوافق على الشروط
+  </button>
+</div>
+
+<script src="lang.js"></script>
+<script>
+loadLang();
+
+/* إخفاء إخلاء المسؤولية بعد الموافقة */
+function acceptTerms() {
+  localStorage.accepted = "yes";
+  document.getElementById("disclaimerBox").style.display = "none";
+}
+
+/* إظهار الصندوق إذا لم يوافق المستخدم */
+if (localStorage.accepted === "yes") {
+  document.getElementById("disclaimerBox").style.display = "none";
+}
+</script>
+
+</body>
+</html>
